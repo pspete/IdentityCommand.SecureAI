@@ -1,12 +1,30 @@
-# Change Log
+---
+title: "IdentityCommand.SecureAI Release 0.1"
+date: 2026-10-07 00:00:00
+version: 0.1.0
+tags:
+  - Release Notes
+  - Connect-SAITenant
+  - Remove-SAIAgent
+  - Set-SAIAgentState
+  - New-SAIAgent
+  - Remove-SAIMcpServer
+  - Set-SAIMcpServerState
+  - Get-SAIPredefinedMcpServer
+  - New-SAIMcpServer
+  - Get-SAIMcpServer
+  - Remove-SAIPolicy
+  - Set-SAIPolicyState
+  - New-SAIPolicy
+  - Get-SAIPolicy
+  - New-SAIOwnerDefinition
+  - New-SAIAgentConditionDefinition
+  - New-SAIUserConditionDefinition
+  - New-SAIResourceConditionDefinition
+  - Get-SAIModuleData
+---
 
-All notable changes to this project will be documented in this file.
-
-## Unreleased
-
-- N/A
-
-## [0.1.0] - 2026-10-07
+## [0.1.0]
 
 ### Added
 
@@ -28,4 +46,3 @@ All notable changes to this project will be documented in this file.
   `New-SAIUserConditionDefinition` and `New-SAIResourceConditionDefinition`. Each chains onto a
   previous definition, since the service combines match groups with OR.
 - `Get-SAIModuleData`: get the module version and session configuration data.
-
