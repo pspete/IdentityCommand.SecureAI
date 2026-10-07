@@ -2,16 +2,14 @@
 
 **IdentityCommand.SecureAI** is a PowerShell module that provides a set of easy-to-use commands, allowing you to interact with the **CyberArk Secure AI API** from within the PowerShell environment.
 
-| Main Branch              | Latest Build             | CodeFactor                 | Coverage                     | PowerShell Gallery        | License                      |
-| ------------------------ | ------------------------ | -------------------------- | ---------------------------- | ------------------------- | ---------------------------- |
-| [![appveyor][]][av-site] | [![tests][]][tests-site] | [![codefactor][]][cf-site] | [![codecov][]][codecov-link] | [![psgallery][]][ps-site] | [![license][]][license-link] |
+| Main Branch              | CodeFactor                 | Coverage                     | PowerShell Gallery        | License                      |
+| ------------------------ | -------------------------- | ---------------------------- | ------------------------- | ---------------------------- |
+| [![build][]][build-site] | [![codefactor][]][cf-site] | [![codecov][]][codecov-link] | [![psgallery][]][ps-site] | [![license][]][license-link] |
 
-[appveyor]: https://ci.appveyor.com/api/projects/status/q2av77njofnsul92/branch/main?svg=true
-[av-site]: https://ci.appveyor.com/project/pspete/IdentityCommand-SecureAI/branch/main
+[build]: https://github.com/pspete/IdentityCommand.SecureAI/actions/workflows/ci.yml/badge.svg?branch=main&event=push
+[build-site]: https://github.com/pspete/IdentityCommand.SecureAI/actions/workflows/ci.yml?query=branch%3Amain
 [psgallery]: https://img.shields.io/powershellgallery/v/IdentityCommand.SecureAI.svg
 [ps-site]: https://www.powershellgallery.com/packages/IdentityCommand.SecureAI
-[tests]: https://img.shields.io/appveyor/tests/pspete/IdentityCommand-SecureAI.svg
-[tests-site]: https://ci.appveyor.com/project/pspete/IdentityCommand-SecureAI
 [downloads]: https://img.shields.io/powershellgallery/dt/IdentityCommand.SecureAI.svg?color=blue
 [cf-site]: https://www.codefactor.io/repository/github/pspete/IdentityCommand.SecureAI
 [codefactor]: https://www.codefactor.io/repository/github/pspete/IdentityCommand.SecureAI/badge
