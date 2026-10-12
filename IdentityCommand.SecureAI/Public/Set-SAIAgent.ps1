@@ -44,7 +44,7 @@ function Set-SAIAgent {
 
     process {
 
-        $URI = "$($ISPSSSession.tenant_url)/api/agents/$agentId"
+        $URI = "$(Resolve-RequestUrl)/api/agents/$agentId"
 
         $body = $PSBoundParameters | Get-Parameter -ParametersToRemove agentId | ConvertTo-Json -Depth 8
 

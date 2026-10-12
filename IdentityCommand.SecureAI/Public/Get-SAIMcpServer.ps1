@@ -26,14 +26,14 @@ function Get-SAIMcpServer {
 
         if ($PSCmdlet.ParameterSetName -eq 'byId') {
 
-            $URI = "$($ISPSSSession.tenant_url)/api/targets/mcp-servers/$mcpServerId"
+            $URI = "$(Resolve-RequestUrl)/api/targets/mcp-servers/$mcpServerId"
 
             #Send Request
             Invoke-IDRestMethod -Uri $URI -Method GET -Accept $(Get-SAIApiHeader -Resource Targets)
 
         } else {
 
-            $URI = "$($ISPSSSession.tenant_url)/api/targets/mcp-servers"
+            $URI = "$(Resolve-RequestUrl)/api/targets/mcp-servers"
             $URI = Add-QueryString -URI $URI -Parameter ($PSBoundParameters | Get-Parameter)
 
             #Send Request

@@ -22,7 +22,7 @@ function Set-SAIPolicyState {
 
     process {
 
-        $URI = "$($ISPSSSession.tenant_url)/api/policies/$policyId/state"
+        $URI = "$(Resolve-RequestUrl)/api/policies/$policyId/state"
 
         $body = [ordered]@{ state = $state } | ConvertTo-Json -Depth 8
 

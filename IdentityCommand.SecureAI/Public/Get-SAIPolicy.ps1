@@ -26,14 +26,14 @@ function Get-SAIPolicy {
 
         if ($PSCmdlet.ParameterSetName -eq 'byId') {
 
-            $URI = "$($ISPSSSession.tenant_url)/api/policies/$policyId"
+            $URI = "$(Resolve-RequestUrl)/api/policies/$policyId"
 
             #Send Request
             Invoke-IDRestMethod -Uri $URI -Method GET -Accept $(Get-SAIApiHeader -Resource Policies)
 
         } else {
 
-            $URI = "$($ISPSSSession.tenant_url)/api/policies"
+            $URI = "$(Resolve-RequestUrl)/api/policies"
             $URI = Add-QueryString -URI $URI -Parameter ($PSBoundParameters | Get-Parameter)
 
             #Send Request

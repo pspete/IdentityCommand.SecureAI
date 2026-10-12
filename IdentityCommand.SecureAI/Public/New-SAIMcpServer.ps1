@@ -115,7 +115,7 @@ function New-SAIMcpServer {
 
     process {
 
-        $URI = "$($ISPSSSession.tenant_url)/api/targets/mcp-servers"
+        $URI = "$(Resolve-RequestUrl)/api/targets/mcp-servers"
 
         if ($PSBoundParameters.ContainsKey('clientSecret') -and (-not $PSBoundParameters.ContainsKey('clientId'))) {
             throw 'clientSecret cannot be provided without clientId'

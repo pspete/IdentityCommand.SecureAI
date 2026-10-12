@@ -15,7 +15,7 @@ function Remove-SAIAgent {
 
     process {
 
-        $URI = "$($ISPSSSession.tenant_url)/api/agents/$agentId"
+        $URI = "$(Resolve-RequestUrl)/api/agents/$agentId"
 
         if ($PSCmdlet.ShouldProcess($agentId, 'Delete AI Agent')) {
 
