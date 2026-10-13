@@ -50,7 +50,7 @@ function New-SAIAgent {
 
     process {
 
-        $URI = "$($ISPSSSession.tenant_url)/api/agents"
+        $URI = "$(Resolve-RequestUrl)/api/agents"
 
         $body = $PSBoundParameters | Get-Parameter | ConvertTo-Json -Depth 8
 

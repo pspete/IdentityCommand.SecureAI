@@ -16,7 +16,7 @@ function Get-SAIPredefinedMcpServer {
 
     process {
 
-        $URI = "$($ISPSSSession.tenant_url)/api/targets/predefined/mcp-servers"
+        $URI = "$(Resolve-RequestUrl)/api/targets/predefined/mcp-servers"
 
         if ($PSCmdlet.ParameterSetName -eq 'byId') {
 

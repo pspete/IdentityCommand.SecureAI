@@ -71,7 +71,7 @@ function Set-SAIPolicy {
 
     process {
 
-        $URI = "$($ISPSSSession.tenant_url)/api/policies/$policyId"
+        $URI = "$(Resolve-RequestUrl)/api/policies/$policyId"
 
         #The service leaves omitted fields unchanged, so only what was supplied is sent
         $body = $PSBoundParameters | Get-Parameter -ParametersToRemove policyId | ConvertTo-Json -Depth 10

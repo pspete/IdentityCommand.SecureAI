@@ -70,7 +70,7 @@ function New-SAIPolicy {
 
     process {
 
-        $URI = "$($ISPSSSession.tenant_url)/api/policies"
+        $URI = "$(Resolve-RequestUrl)/api/policies"
 
         #A user grant is required for an on-behalf-of policy and rejected for an autonomous one
         if (($accessType -eq 'ON_BEHALF_OF') -and (-not $PSBoundParameters.ContainsKey('user'))) {

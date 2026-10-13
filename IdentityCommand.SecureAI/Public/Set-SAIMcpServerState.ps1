@@ -22,7 +22,7 @@ function Set-SAIMcpServerState {
 
     process {
 
-        $URI = "$($ISPSSSession.tenant_url)/api/targets/mcp-servers/$mcpServerId/state"
+        $URI = "$(Resolve-RequestUrl)/api/targets/mcp-servers/$mcpServerId/state"
 
         $body = [ordered]@{ state = $state } | ConvertTo-Json -Depth 8
 

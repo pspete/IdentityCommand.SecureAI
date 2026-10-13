@@ -16,7 +16,7 @@ function Get-SAIAgent {
 
     process {
 
-        $URI = "$($ISPSSSession.tenant_url)/api/agents"
+        $URI = "$(Resolve-RequestUrl)/api/agents"
 
         if ($PSCmdlet.ParameterSetName -eq 'byId') {
 

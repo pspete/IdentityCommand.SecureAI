@@ -22,7 +22,7 @@ function Set-SAIAgentState {
 
     process {
 
-        $URI = "$($ISPSSSession.tenant_url)/api/agents/$agentId/state"
+        $URI = "$(Resolve-RequestUrl)/api/agents/$agentId/state"
 
         $body = [ordered]@{ state = $state } | ConvertTo-Json -Depth 8
 
