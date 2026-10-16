@@ -113,6 +113,7 @@ $ISPSSSession = [ordered]@{
     User               = $null
     TenantId           = $null
     SessionId          = $null
+    Subdomain          = $null
     WebSession         = $null
     StartTime          = $null
     ElapsedTime        = $null
@@ -124,3 +125,6 @@ $ISPSSSession = [ordered]@{
 } | Add-CustomType -Type IdCmd.Session
 
 New-Variable -Name ISPSSSession -Value $ISPSSSession -Scope Script -Force
+
+#Discovery key for Resolve-RequestUrl
+New-Variable -Name ServiceKey -Value 'aigw' -Scope Script -Force

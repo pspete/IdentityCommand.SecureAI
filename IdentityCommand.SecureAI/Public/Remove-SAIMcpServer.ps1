@@ -15,7 +15,7 @@ function Remove-SAIMcpServer {
 
     process {
 
-        $URI = "$($ISPSSSession.tenant_url)/api/targets/mcp-servers/$mcpServerId"
+        $URI = "$(Resolve-RequestUrl)/api/targets/mcp-servers/$mcpServerId"
 
         if ($PSCmdlet.ShouldProcess($mcpServerId, 'Delete MCP Server')) {
 

@@ -46,7 +46,7 @@ function Set-SAIMcpServer {
 
     process {
 
-        $URI = "$($ISPSSSession.tenant_url)/api/targets/mcp-servers/$mcpServerId"
+        $URI = "$(Resolve-RequestUrl)/api/targets/mcp-servers/$mcpServerId"
 
         $body = $PSBoundParameters | Get-Parameter -ParametersToRemove mcpServerId | ConvertTo-Json -Depth 8
 

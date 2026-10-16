@@ -87,4 +87,49 @@ Describe 'Get-SAIAgent' {
         }
     }
 
+    Context 'Without a module session' {
+
+        BeforeEach {
+
+            InModuleScope -ModuleName $Script:SAIModuleName {
+                $ISPSSSession = [ordered]@{
+                    tenant_url = $null
+                    Subdomain  = $null
+                    StartTime  = $null
+                    WebSession = $null
+                }
+                New-Variable -Name ISPSSSession -Value $ISPSSSession -Scope Script -Force
+            }
+
+            Mock -CommandName Get-IDSession -ModuleName $Script:SAIModuleName -MockWith {
+                [ordered]@{
+                    tenant_url = 'https://sometenant.id.cyberark.cloud'
+                    Subdomain  = 'sometenant'
+                    StartTime  = Get-Date '2026-01-01T09:00:00'
+                    WebSession = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+                }
+            }
+
+            Mock -CommandName Resolve-ServiceUrl -ModuleName $Script:SAIModuleName -MockWith {
+                [pscustomobject]@{ ServiceUrl = "https://$Subdomain.$Service.cyberark.cloud" }
+            }
+
+        }
+
+        It 'resolves the service URL from the IdentityCommand session' {
+            $null = Get-SAIAgent
+            Should -Invoke -CommandName Resolve-ServiceUrl -ModuleName $Script:SAIModuleName -ParameterFilter {
+                $Service -eq 'aigw' -and $Subdomain -eq 'sometenant'
+            } -Times 1 -Exactly -Scope It
+        }
+
+        It 'sends request to the resolved service URL' {
+            $null = Get-SAIAgent
+            Should -Invoke -CommandName Invoke-IDRestMethod -ModuleName $Script:SAIModuleName -ParameterFilter {
+                $URI -eq 'https://sometenant.aigw.cyberark.cloud/api/agents'
+            } -Times 1 -Exactly -Scope It
+        }
+
+    }
+
 }
